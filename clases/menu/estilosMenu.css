@@ -1,0 +1,20 @@
+/*Estilos para la configuracion del menu*/
+* {margin: 0px;padding: 0px; outline: 0;}
+#menu {text-align: left;font-size: 10px;width: auto;z-index: 999;}
+#menu ul {list-style-type: none;z-index: 999;}
+#menu ul li {width: 100px;z-index: 999;}
+#menu ul li.nivel1 { float: left;margin-right: 1px;height: 20px;width: auto; margin-top:2px;margin-left: 2px;z-index: 999;}
+#menu ul li a {display: block;text-decoration: none;color: #000;font-weight: bold;background-color: #CCC;border: 0px solid  #000;position: relative;height: 15px;padding: 3px;z-index: 999;}
+#menu ul li a.nivel2, #menu ul li a.nivel2ie {color: #000;background: #fff;z-index: 999;}
+#menu ul li a.nivel1, #menu ul li a.nivel2 {display: block!important;display: none;border: 0px solid #000;z-index: 999;}
+#menu ul li:hover {position: relative;z-index: 999;}
+#menu ul li a:hover, #menu ul li:hover a.nivel1 {background-color: #999;color: #000;position: relative;z-index: 999;}
+#menu ul li ul {display: none;z-index: 999;border: 1px solid #999;width: 180px;}
+#menu ul li:hover  ul.nivel2, #menu ul li a:hover  ul.nivel2{display: block;position: absolute;left: 0px;z-index: 999;}
+#menu ul li ul li a:hover ul.nivel3, #menu ul li ul li:hover ul.nivel3 {display: block;position: absolute;left: 161px!important;left: 160px;top:2px!important;top: -21px;z-index: 999;}
+#menu ul li ul li a {width: 180px;padding: 5px 0px;border-top-color: transparent;background: #ccc;z-index: 999;}
+#menu ul li ul li a:hover {border-top-color: #000;position: relative;background: #e1e1e1;z-index: 999;}
+#menu ul li ul li ul li a.primera {border-top-color: #ccc;z-index: 999;}
+table.falsa {border-collapse:collapse;border:0px;float: left;position: relative;z-index: 999;}
+.botonesBarraIzq{float:left;width:auto; height:20px; margin-top:2px; border:1px solid #CCC; margin-left:8px; text-align:center; cursor:pointer;z-index: 999;}
+/*.barraMenu{height:25px;width:99.7%;border:1px solid #999; background:#CCC; font-size:10px;font: bold 10px/1.5em Verdana;z-index: 999;}*/

@@ -1,0 +1,48 @@
+<?
+    $mes=date("m");
+	if($mes=="01"){
+		$mes="Enero";}
+	elseif($mes=="02"){
+		$mes="Febrero";}
+	elseif($mes=="03"){
+		$mes="Marzo";}
+	elseif($mes=="04"){
+		$mes="Abril";}
+	elseif($mes=="05"){
+		$mes="Mayo";}
+	elseif($mes=="06"){
+		$mes="Junio";}
+	elseif($mes=="07"){
+		$mes="Julio";}
+	elseif($mes=="08"){
+		$mes="Agosto";}
+	elseif($mes=="09"){
+		$mes="Septiembre";}
+	elseif($mes=="10"){
+		$mes="Octubre";}
+	elseif($mes=="11"){
+		$mes="Noviembre";}
+	elseif($mes=="12"){
+		$mes="Diciembre";}
+    $dia=date("w");
+	if($dia=="1"){
+		$dia="Lunes";}
+	elseif($dia=="2"){
+		$dia="Martes";}
+	elseif($dia=="3"){
+		$dia="Miercoles";}
+	elseif($dia=="4"){
+		$dia="Jueves";}
+	elseif($dia=="5"){
+		$dia="Viernes";}
+	elseif($dia=="6"){
+		$dia="Sabado";}
+	elseif($dia=="0"){
+		$dia="Domingo";}
+	$ndia=date("d");
+	$año=date("Y");
+	$fecha=$dia." ".$ndia." de ".$mes." del ".$año;
+	$fechad=$dia." ".$ndia;
+	// poner echo $fecha para imprimir valor
+	$hinternet=date("B");
+?>

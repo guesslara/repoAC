@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* CSS Document */
+document,html,body{margin:0px; font-family:Verdana, Geneva, sans-serif; background:#FFF; font-size:10px; height:100%; overflow:hidden;}
+/*interfaz principal*/
+.contenedorPrincipal{border:2px solid #333; margin:2px; background:#999; height:99%; }
+.contenedorVentana{border:1px solid #CCC; background:#999; width:99.7%; overflow:auto;}
+/*.barraMenu{height:25px;width:99.7%; overflow:hidden;border:1px solid #999; background:#CCC; font-size:10px;font: bold 10px/1.5em Verdana;}*/
+.botonesBarraIzq{float:left;width:auto; height:20px; margin-top:2px; border:1px solid #CCC; margin-left:8px; text-align:center; cursor:pointer;}
+.botonesBarraIzq:hover{ background:#E1E1E1;border:1px solid #999;cursor:pointer;}
+
+/*para las barras de herramientas*/
+.botonesBarraHerIzq{float:left;width:auto; height:20px; margin-top:2px; border:1px solid #CCC; margin-left:3px; text-align:center; cursor:pointer;}
+.botonesBarraHerIzq:hover{background:#FFF; border:1px solid #999; cursor:pointer;}
+
+.botonActivo{background:#FFF;float:left;width:100px; height:20px; margin-top:2px; border:1px solid #999; margin-left:1px; text-align:center;}
+
+.botonesBarraDer{float:right;width:100px; height:20px; margin-top:2px; border:1px solid #999; background:#FFF; margin-left:3px; text-align:center; cursor:pointer;}
+.barraTitulo{height:20px; background:#000; color:#FFF; font-size:10px; bold 10px/1.5em Verdana;}
+.barraHerramientas{height:25px; /*height:3%;*/ width:99.7%;border:1px solid #CCC; background:#CCC; font-size:10px;font: bold 10px/1.5em Verdana;}
+.barraEstado{height:17px; width:99.7%; bottom:0px; border:1px solid #333; background:#CCC; font-size:10px;font: bold 10px/1.5em Verdana;}
+.textoBarraTitulo{float:left;}
+.btnCerrarApp{float:right;}
+.cargadorApp{float:right; margin-right:5px;}
+.tituloBarraEstado{float:left; margin-left:5px;}
+/*fin de la GUI*/
+/*calendario*/
+#fechas{border:1px solid #000; background-color:#FFFFFF; height:100px; width:500px; position:absolute; left:50%; top:50%; margin-left:-250px; margin-top:-50px; z-index:4;}
+#msgCalendario{border:1px solid #000; background-color:#FFFFFF; height:100px; width:450px; position:absolute; left:50%; top:50%; margin-left:-225px; margin-top:-50px; z-index:4;}
+#msgCalendario1{border:1px solid #000; background-color:#FFFFFF; height:100px; width:500px; position:absolute; left:50%; top:50%; margin-left:-250px; margin-top:-50px; z-index:4;}
+#msgCalendario2{border:1px solid #000; background-color:#FFFFFF; height:300px; width:500px; position:absolute; left:50%; top:50%; margin-left:-250px; margin-top:-150px; z-index:4;}
+#msgCalendario3{border:1px solid #000; background-color:#FFFFFF; height:400px; width:500px; position:absolute; left:50%; top:50%; margin-left:-250px; margin-top:-200px; z-index:4;}
+/*fin calendario*/
+
+/*para la caja de dialogo*/
+#dialog{font-size:10px;}
+#dialog p{font-size:10px;}
+
+/*para los listados en la gui*/
+.filasListados{border-bottom:1px solid #000; margin:1px 0px 1px 0px; height:25px; background:#FFF;}
+.filasListados:hover{background:#B0D0FF; font-weight:bold;}
+
+.filasListadosRadios{border-bottom:1px solid #CCC; height:25px;}
+.filasListadosRadiosTr:hover{background:#B0D0FF;}
+/*modificaRadioListado*/
+/*transparencia*/
+#desv{ background:url(../img/desv.png); height:100%; width:100%;position: absolute; left: 0; top: 0; z-index:2; display:block;}
+#msgListaRadios{border:2px solid #000;background-color:#999;height:500px;width:1020px;position:absolute;left:50%;top:50%;margin-left:-510px;margin-top:-250px;z-index:3;}
+#modificaRadioListado{border:#000 solid thin;background-color:#999;height:400px;width:500px;position:absolute;left:50%;top:50%;margin-left:-250px;margin-top:-200px;z-index:4;}
+
+#msgCarga{border:1px solid #000;background-color:#FFF; height:70px; width:400px; position:absolute; left:50%; top:50%; margin-left:-200px; margin-top:-35px; z-index:5;}
+#msgCambios{border:2px solid #000;background-color:#FFFFFF;height:200px;width:600px;position:absolute;left:50%;top:50%;margin-left:-300px;margin-top:-100px;z-index:6;}
+
+/*cargador en las operaciones*/
+#msgCargador{border:1px solid #000;background-color:#FFF;height:50px;width:50px;position:absolute;left:50%;top:50%;margin-left:-25px;margin-top:-25px;z-index:4;}
+
+/*Mensaje mantenimiento*/
+#msgManttoProg{border:1px solid #CCC;background-color:#FFF;height:200px;width:100%;position:absolute;top:50%;margin-top:-100px;z-index:100;}
+/*Fin mensaje mantenimiento*/
+
+/*titulos y estilos en tablas de resultados*/
+.tituloTabla{height:25px; background:#000; color:#FFF;}
+.tituloTextoFormulario{border:1px solid #CCC; background:#f0f0f0; height:20px;}
+.tituloTablaDetalle{height:25px; background:#999; color:#FFF;}
+.resultadosTablaReporte{height:25px; border-bottom:1px solid #CCC; border-left:1px solid #CCC;}
+#barraTitulo1VentanaDialogo{ height:20px; padding:5px; color:#FFF; font-size:12px; background:#000;}
+#btnCerrarVentanaDialogo{ float:right;}
+/*ventana flotante*/
+.barraTitulo1VentanaDialogoValidacion{ height:20px; padding:5px; color:#FFF; font-size:12px; background:#000;}
+.ventanaDialogo{
+	border:1px solid #000;
+	background-color:#FFF;
+	height:600px;
+	width:1000px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin-left:-500px;
+	margin-top:-300px;        
+	z-index:1;
+	/*sombra*/
+	-webkit-box-shadow:10px 10px 5px #CCC;
+	-moz-box-shadow:10px 10px 5px #CCC;
+	filter: shadow(color=#CCC, direction=135,strength=2);
+}
+/*fin ventana flotante*/

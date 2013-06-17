@@ -1,0 +1,17 @@
+    /*
+    Estilos del grid en la interfaz de usuario
+    Autor: Gerardo Lara
+    Fecha: 29-enero-2012
+    */
+.imeiListado{ border:1px solid #CCC; width:105px; font-size:12px;}
+.resultadoGuardado{background:#FFC; border:1px solid #CCC;width:200px; font-weight:bold;}
+.cuadroGrid{ background:#CCC; border-bottom:1px solid #000; border-right:1px solid #000; height:18px; width:20px;float:left; font-weight:bold; text-align:center; font-size:11px;}
+.elemento{float:left;}
+.retornoCarro{ clear:both;}
+.cuadroListadoCol{ background:#CCC; border-bottom:1px solid #000; border-right:1px solid #000; height:18px; float:left; width:22px; font-size:12px; font-weight:bold; text-align:center;}
+.imeiListadoCol{ background:#CCC; border-bottom:1px solid #000; border-right:1px solid #000; height:18px; float:left; width:105px; font-size:12px; font-weight:bold; text-align:center;}
+.resultadoGuardadoCol{background:#CCC; border-bottom:1px solid #000; border-right:1px solid #000; height:18px; float:left; width:200px; font-size:12px; font-weight:bold; text-align:center;}    
+/**/
+.datoListado{ border:1px solid #CCC; width:110px; font-size:12px;}
+.cabeceraColumna{ background:#CCC; border-bottom:1px solid #000; border-right:1px solid #000; height:18px; float:left; width:110px; font-size:12px; font-weight:bold; text-align:center;}
+.elementoFocus{background:#e1e1e1; width:110px;}
