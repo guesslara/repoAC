@@ -5,7 +5,7 @@
 	$pass="xampp";
 	//tabla usuarios	
 	//base de datos
-	$db="2013_iqe_inv";
+	$db="2013_iqe_rac";
 	
 	/***********/
 	$strP="e10adc3949ba59abbe56e057f20f883e";
