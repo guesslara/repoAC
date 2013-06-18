@@ -120,18 +120,49 @@
 		    }					
 		    $directorio->close();
 		    sort($contenidoDir);
+?>
+			<table border="0" cellpadding="1" cellspacing="1" width="99%" style="margin: 5px;font-size: 10px;">
+			    <tr>
+				<td style="width: 75%;height: 15px;padding: 5px;border: 1px solid #666;background: #f0f0f0;text-align: left;font-weight: bold;">Nombre</td>
+				<td style="width: 10%;height: 15px;padding: 5px;border: 1px solid #666;background: #f0f0f0;text-align: left;font-weight: bold;">Tama&ntilde;o</td>
+				<td style="width: 14%;height: 15px;padding: 5px;border: 1px solid #666;background: #f0f0f0;text-align: left;font-weight: bold;">Tipo</td>
+			    </tr>
+<?
+		    $finfo = finfo_open(FILEINFO_MIME_TYPE);
 		    for($i=0;$i<count($contenidoDir);$i++){
 			$idDivEditar="divEditar".$i;  $idInputEditar="inputEditar".$i; $idEnlace="idEnlace".$i;
 			if(is_dir($path."/".$contenidoDir[$i])){			    
 ?>						
-			    <div style="clear: both;margin-bottom: 5px;margin-top: 5px;"><div id="<?=$idDivEditar;?>" class="estiloDivHerr"><a href="#" onclick="renombrarDirectorio('<?=$contenidoDir[$i];?>','<?=$idInputEditar;?>','<?=$idEnlace;?>')" title="Renombrar Directorio">R</a> | <a href="#" onclick="eliminaDirectorio('<?=$contenidoDir[$i];?>')" title="Eliminar directorio">E</a></div><div style="float: left;margin: 3px;"><a id="<?=$idEnlace;?>" class="estiloListadoDirectorios" href="#" onclick="abrirDirectorio('<?=$path."/".$contenidoDir[$i];?>')" title="Ver Contenido..."><img src="img/folder-closed.gif" border="0" /><?=$contenidoDir[$i];?></a><input type="text" onkeyup="guardarNuevoNombreDir('<?=$contenidoDir[$i];?>','<?=$idInputEditar;?>','<?=$idEnlace;?>',event)" name="<?=$idInputEditar;?>" id="<?=$idInputEditar;?>" value="<?=$contenidoDir[$i];?>" style="font-size: 10px;width: 300px;display: none;"></div></div>
+			    <tr style="border-bottom:1px solid #CCC;">
+				<td style="border-bottom:1px solid #CCC;"><div style="clear: both;margin-bottom: 5px;margin-top: 5px;"><div id="<?=$idDivEditar;?>" class="estiloDivHerr"><a href="#" onclick="renombrarDirectorio('<?=$contenidoDir[$i];?>','<?=$idInputEditar;?>','<?=$idEnlace;?>')" title="Renombrar Directorio">R</a> | <a href="#" onclick="eliminaDirectorio('<?=$contenidoDir[$i];?>')" title="Eliminar directorio">E</a></div><div style="float: left;margin: 3px;"><a id="<?=$idEnlace;?>" class="estiloListadoDirectorios" href="#" onclick="abrirDirectorio('<?=$path."/".$contenidoDir[$i];?>')" title="Ver Contenido..."><img src="img/folder-closed.gif" border="0" /><?=$contenidoDir[$i];?></a><input type="text" onkeyup="guardarNuevoNombreDir('<?=$contenidoDir[$i];?>','<?=$idInputEditar;?>','<?=$idEnlace;?>',event)" name="<?=$idInputEditar;?>" id="<?=$idInputEditar;?>" value="<?=$contenidoDir[$i];?>" style="font-size: 10px;width: 300px;display: none;"></div></div></td>
+				<td style="border-bottom:1px solid #CCC;">&nbsp;</td>
+				<td style="border-bottom:1px solid #CCC;">&nbsp;<? echo finfo_file($finfo,$path."/".$contenidoDir[$i]);?></td>
+			    </tr>
 <?						                           
 			}else{
 ?>						
-			    <div style="clear: both;margin-bottom: 5px;margin-top: 5px;"><div id="<?=$idDivEditar;?>" class="estiloDivHerr"><a href="#" onclick="renombrarDirectorio('<?=$contenidoDir[$i];?>','<?=$idInputEditar;?>','<?=$idEnlace;?>')" title="Renombrar Directorio">R</a> | <a href="#" onclick="eliminarArchivo('<?=$contenidoDir[$i];?>')" title="Eliminar archivo">E</a></div><div style="float: left;margin: 3px;"><a id="<?=$idEnlace;?>" class="estiloListadoDirectorios" href="#" onclick="mostrarArchivo('<?=$path."/".$contenidoDir[$i];?>')" title="Ver Archivo..."><img src="img/file.gif" border="0" /><?=$contenidoDir[$i];?></a><input type="text" onkeyup="guardarNuevoNombreDir('<?=$contenidoDir[$i];?>','<?=$idInputEditar;?>','<?=$idEnlace;?>',event)" name="<?=$idInputEditar;?>" id="<?=$idInputEditar;?>" value="<?=$contenidoDir[$i];?>" style="font-size: 10px;width: 300px;display: none;"></div></div>
+			    <tr>
+				<td style="border-bottom:1px solid #CCC;">
+				    <div style="clear: both;margin-bottom: 5px;margin-top: 5px;">
+					<div id="<?=$idDivEditar;?>" class="estiloDivHerr">
+					    <a href="#" onclick="renombrarDirectorio('<?=$contenidoDir[$i];?>','<?=$idInputEditar;?>','<?=$idEnlace;?>')" title="Renombrar Directorio">R</a> |
+					    <a href="#" onclick="eliminarArchivo('<?=$contenidoDir[$i];?>')" title="Eliminar archivo">E</a>
+					</div>
+					<div style="float: left;margin: 3px;">
+					    <a id="<?=$idEnlace;?>" class="estiloListadoDirectorios" href="#" onclick="mostrarArchivo('<?=$path."/".$contenidoDir[$i];?>')" title="Ver Archivo..."><img src="img/file.gif" border="0" /><?=$contenidoDir[$i];?></a>
+					    <input type="text" onkeyup="guardarNuevoNombreDir('<?=$contenidoDir[$i];?>','<?=$idInputEditar;?>','<?=$idEnlace;?>',event)" name="<?=$idInputEditar;?>" id="<?=$idInputEditar;?>" value="<?=$contenidoDir[$i];?>" style="font-size: 10px;width: 300px;display:none;">
+					</div>
+				    </div>
+				</td>
+				<td style="border-bottom:1px solid #CCC;">&nbsp;<? echo filesize($path."/".$contenidoDir[$i])." bytes";?></td>
+				<td style="border-bottom:1px solid #CCC;">&nbsp;<? echo finfo_file($finfo,$path."/".$contenidoDir[$i]);?></td>
+			    </tr>
 <?						                            
 			}
 		    }
+?>
+			</table>
+<?
 		    echo "<script type='text/javascript'> $('#hdnCantElementos').attr('value','".$i."'); </script>";
 		}else{
 		    echo "<center><p><h4>El directorio esta vacio</h4></p></center>";

@@ -83,7 +83,7 @@
     function renombrarDirectorio(directorio,idInput,idEnlace){
 	$("#"+idEnlace).hide();
 	$("#"+idInput).show();
-	$("#"+idInput).focus();
+	$("#"+idInput).focus();	
     }
     
     function guardarNuevoNombreDir(directorio,idInput,idEnlace,evento){
@@ -93,7 +93,8 @@
 	    rutaActual=$("#hdnRutaActual").val();
 	    opciones="action=renombrarDirectorio&directorio="+directorio+"&idInput="+idInput+"&idEnlace="+idEnlace+"&nuevoNombre="+nuevoNombre+"&rutaActual="+rutaActual;
 	    ajaxApp("browserArchivos","auxVisor.php",opciones,"POST");
-	}
+	    finEditarContenido();
+	}	
     }
     
     function editarContenido(){
@@ -103,17 +104,20 @@
 	    $(divEditar).show();
 	}
 	$("#btnEditar1").hide();
-	$("#btnEditar2").show();        
+	$("#btnEditar2").show();	
     }
     
     function finEditarContenido(){
         cantEditar=parseInt($("#hdnCantElementos").val());
 	for(i=0;i<cantEditar;i++){
 	    divEditar="#divEditar"+i;
+	    inEditar="#inputEditar"+i;
 	    $(divEditar).hide();
+	    $(inEditar).hide();
 	}
         $("#btnEditar2").hide();        
-        $("#btnEditar1").show();	
+        $("#btnEditar1").show();
+	cerrarVistaPrevia();
     }
     
     function mostrarFormSubirArchivos(){
@@ -166,6 +170,7 @@
     function ocultarVistaPrevia(){
 	$("#browserArchivos").show();
 	$("#vistaPreviaArchivo").hide();
+	$("#btnVistaPrevia").hide();
     }
 </script>
 <style>
@@ -186,7 +191,7 @@
     .estiloSubirArchivo{float: left;width:90px;background: #f0f0f0;height: 15px;padding: 5px;margin-left: 4px;border: 1px solid #666;padding: 5px;font-weight: bold;text-align: center;font-size: 10px;}
     .estiloSubirArchivo:hover{background: #FFF;cursor: pointer;}
     .estiloCerrarVistaPrevia{display: none;float: left;width:90px;color: #FFF;background: #ff0000;height: 15px;padding: 5px;margin-left: 4px;border: 1px solid #666;padding: 5px;font-weight: bold;text-align: center;font-size: 10px;}
-    .estiloCerrarVistaPrevia:hover{background: #FFF;color: #000;}
+    .estiloCerrarVistaPrevia:hover{background: #FFF;color: #000;cursor: pointer;}
 </style>
 <input type="hidden" name="hdnRutaActual" id="hdnRutaActual" value="" />
 <input type="hidden" name="hdnCantElementos" id="hdnCantElementos" value="" />
