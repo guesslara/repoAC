@@ -48,6 +48,11 @@
         ajaxApp("browserArchivos","auxVisor.php","action=abrirDirectorio&path="+path,"POST");	
     }
     
+    function cerrarVistaPrevia(){
+	pathActual=$("#hdnRutaActual").val();//se recupera la ruta actual	
+	actualizarDirectorio(pathActual);
+    }
+    
     function crearDirectorio(){
 	var directorio=prompt("Introduzca el nombre del Directorio a Crear");
 	if(directorio=="" || directorio == null || directorio==undefined){
@@ -129,7 +134,8 @@
     function mostrarArchivo(path){        
 	$("#browserArchivos").hide();
 	$("#vistaPreviaArchivo").show();
-	$("#vistaPreviaArchivo").attr("src",path);	
+	$("#vistaPreviaArchivo").attr("src",path);
+	$("#btnVistaPrevia").show();
     }
     
     function ajaxApp(divDestino,url,parametros,metodo){	
@@ -179,6 +185,8 @@
     .estiloDivHerr{display: none;float: left;margin: 3px;border-bottom: 1px solid #CCC;width: 80px;height: 20px;text-align: center;}
     .estiloSubirArchivo{float: left;width:90px;background: #f0f0f0;height: 15px;padding: 5px;margin-left: 4px;border: 1px solid #666;padding: 5px;font-weight: bold;text-align: center;font-size: 10px;}
     .estiloSubirArchivo:hover{background: #FFF;cursor: pointer;}
+    .estiloCerrarVistaPrevia{display: none;float: left;width:90px;color: #FFF;background: #ff0000;height: 15px;padding: 5px;margin-left: 4px;border: 1px solid #666;padding: 5px;font-weight: bold;text-align: center;font-size: 10px;}
+    .estiloCerrarVistaPrevia:hover{background: #FFF;color: #000;}
 </style>
 <input type="hidden" name="hdnRutaActual" id="hdnRutaActual" value="" />
 <input type="hidden" name="hdnCantElementos" id="hdnCantElementos" value="" />
@@ -200,7 +208,7 @@
 <?
     }
 ?>
-	<div id="btnMostrarArchivos" class="estiloSubirArchivo" style="width: auto;" onclick="actualizarDirectorio()">Cerrar Vista Previa</div>
+	<div id="btnVistaPrevia" class="estiloCerrarVistaPrevia" style="width: auto;" onclick="cerrarVistaPrevia()">Cerrar Vista Previa</div>
     </div>
     <div id="browserArchivos" style="margin: 0px 5px 5px 5px;width: 99.2%;border: 1px solid #666;background: #FFF;position: relative;overflow-x: auto;"></div>
     <iframe id="vistaPreviaArchivo" style="display: none;margin: 0px 5px 5px 5px;width: 99.2%;border: 1px solid #666;background: #F0F0F0;position: relative;overflow-x: auto;"></iframe>
