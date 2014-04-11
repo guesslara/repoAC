@@ -8,7 +8,7 @@
     session_start();
     //se incluye el archivo de configuracion
     include "config.php";
-    $rutaExplorar="../../documentos/";
+    $rutaExplorar=$config["explorador"]["path"];
     /*if($_SERVER["HTTP_REFERER"]==""){
         echo "Acceso incorrecto";
         exit;
