@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <title><!-- Insert your title here --></title>
+    <script type="text/javascript" src="librerias/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="librerias/jquery-ui-1.8.custom.min.js"></script>
+    <script type="text/javascript">
+
+$(document).ready(function(){
+
+	// Example 1.1: A single sortable list
+	$('#example-1-1 .sortable-list').sortable();
+
+	// Example 1.2: Sortable and connectable lists
+	$('#carpetas .sortable-list').sortable({
+		connectWith: '#carpetas .sortable-list'
+	});
+
+	// Example 1.3: Sortable and connectable lists with visual helper
+	$('#example-1-3 .sortable-list').sortable({
+		connectWith: '#example-1-3 .sortable-list',
+		placeholder: 'placeholder',
+	});
+
+	// Example 1.4: Sortable and connectable lists (within containment)
+	$('#example-1-4 .sortable-list').sortable({
+		connectWith: '#example-1-4 .sortable-list',
+		containment: '#containment'
+	});
+
+});
+
+</script>
+</head>
+<body>
+    <div class="dhe-example-section" id="ex-1-2">
+	<div class="dhe-example-section-header">
+	    <h3 class="dhe-h3 dhe-example-title">Example 1.2: Sortable and connectable lists</h3>
+	    <div class="dhe-example-description">Drag and drop items within and between lists.</div>
+	</div>
+	<div class="dhe-example-section-content">
+	    <!-- BEGIN: XHTML for example 1.2 -->
+	    <div id="carpetas">
+		<div style="border: 1px solid #CCC;margin: 5px;">
+		    <ul class="sortable-list" style="border: 1px solid #000;">
+			<li class="sortable-item" style="height: 15px;padding: 5px;border: 1px solid #CCC;margin: 5px;">Archivo 1</li>
+			<li class="sortable-item" style="height: 15px;padding: 5px;border: 1px solid #CCC;margin: 5px;">Archivo 2</li>
+                        <li class="sortable-item" style="height: 15px;padding: 5px;border: 1px solid #CCC;margin: 5px;">Archivo 3</li>
+                        <li class="sortable-item" style="height: 15px;padding: 5px;border: 1px solid #CCC;margin: 5px;">Archivo 4</li>
+                        <li class="sortable-item" style="height: 15px;padding: 5px;border: 1px solid #CCC;margin: 5px;">Archivo 5</li>
+                        <li class="sortable-item" style="height: 15px;padding: 5px;border: 1px solid #CCC;margin: 5px;">Archivo 6</li>
+		    </ul>
+		</div>
+		<div style="border: 1px solid #CCC;margin: 5px;">
+		    <ul class="sortable-list" style="border: 1px solid #000;">
+			<li class="sortable-item" style="height: 15px;padding: 10px;border: 1px solid #CCC;margin: 5px;">Archivo 7</li>
+			<li class="sortable-item" style="height: 15px;padding: 5px;border: 1px solid #CCC;margin: 5px;">Archivo 8</li>
+                        <li class="sortable-item" style="height: 15px;padding: 5px;border: 1px solid #CCC;margin: 5px;">Archivo 9</li>
+                        <li class="sortable-item" style="height: 15px;padding: 5px;border: 1px solid #CCC;margin: 5px;">Archivo 10</li>
+		    </ul>
+		</div>
+		<div style="border: 1px solid #CCC;margin: 5px;">
+		    <ul class="sortable-list" style="border: 1px solid #000;height: auto;">
+			
+		    </ul>
+		</div>
+		<div class="clearer">&nbsp;</div>
+	    </div>
+            <!-- END: XHTML for example 1.2 -->
+	</div>
+    </div>
+</body>
+</html>
