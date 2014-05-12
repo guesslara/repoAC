@@ -19,13 +19,35 @@
         }
     }*/
 ?>
-<script type="text/javascript" src="../../clases/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="librerias/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="librerias/jquery-ui-1.8.custom.min.js"></script>
 <script language="javascript">
     raizDirectorio="<?=$rutaExplorar;?>";
     $(document).ready(function (){
 	redimensionarPag();
         abrirDirectorio('<?=$rutaExplorar;?>','browserArchivos');
+	
 	$('#btnAtras').hide();
+	
+	// Example 1.1: A single sortable list
+	$('#example-1-1 .sortable-list').sortable();
+
+	// Example 1.2: Sortable and connectable lists
+	$('#carpetas .sortable-list').sortable({
+		connectWith: '#carpetas .sortable-list'
+	});
+
+	// Example 1.3: Sortable and connectable lists with visual helper
+	$('#example-1-3 .sortable-list').sortable({
+		connectWith: '#example-1-3 .sortable-list',
+		placeholder: 'placeholder',
+	});
+
+	// Example 1.4: Sortable and connectable lists (within containment)
+	$('#example-1-4 .sortable-list').sortable({
+		connectWith: '#example-1-4 .sortable-list',
+		containment: '#containment'
+	});
     });
     
     function redimensionarPag(){

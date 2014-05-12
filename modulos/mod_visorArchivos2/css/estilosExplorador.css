@@ -1,0 +1,21 @@
+/*
+ *Estilos para el explorador
+*/
+body{margin: 0px;font-family:Verdana, Geneva, sans-serif;font-size: 12px;height: 100%;overflow: hidden;}
+    .estiloListadoDirectorios{font-size: 10px;border-bottom: 1px solid #f0f0f0;width: auto;margin: 4px;cursor: pointer;}
+    .estiloListadoDirectorios , a {text-decoration: none;color:blue;}
+    .estiloListadoDirectorios:hover{background: #CED8F6;}
+    .estiloNuevaCarpeta{float: left;width:90px;background: #f0f0f0;height: 15px;padding: 5px;margin-left: 4px;border: 1px solid #666;padding: 5px;font-weight: bold;text-align: center;font-size: 10px;}
+    .estiloNuevaCarpeta:hover{background: #FFF;cursor: pointer;}
+    #cargadorAcciones{font-weight: bold;z-index: 200;background: #F2F5B7;border: 1px solid #FF4000;top: 50%;left: 50%;margin-left: -100px;margin-top: -15px;position: absolute;width: 200px;height: 20px;padding: 10px;}
+    .estiloAtras{float: left;width:50px;background: #f0f0f0;height: 15px;padding: 5px;margin-left: 4px;border: 1px solid #666;padding: 5px;font-weight: bold;text-align: center;font-size: 10px;}
+    .estiloAtras:hover{background: #FFF;cursor: pointer;}
+    .estiloEditar{float: left;width:90px;background: #f0f0f0;height: 15px;padding: 5px;margin-left: 4px;border: 1px solid #666;padding: 5px;font-weight: bold;text-align: center;font-size: 10px;}
+    .estiloEditar:hover{background: #FFF;cursor: pointer;}
+    .estiloEditarActivo{float: left;width:90px;background: #ff0000;height: 15px;padding: 5px;margin-left: 4px;border: 1px solid #666;padding: 5px;font-weight: bold;text-align: center;font-size: 10px;color: #fFF;display: none;}
+    .estiloEditarActivo:hover{background: #FFF;color: #000;cursor: pointer;}
+    .estiloDivHerr{display: none;float: left;margin: 3px;border-bottom: 1px solid #CCC;width: 80px;height: 20px;text-align: center;}
+    .estiloSubirArchivo{float: left;width:90px;background: #f0f0f0;height: 15px;padding: 5px;margin-left: 4px;border: 1px solid #666;padding: 5px;font-weight: bold;text-align: center;font-size: 10px;}
+    .estiloSubirArchivo:hover{background: #FFF;cursor: pointer;}
+    .estiloCerrarVistaPrevia{display: none;float: left;width:90px;color: #FFF;background: #ff0000;height: 15px;padding: 5px;margin-left: 4px;border: 1px solid #666;padding: 5px;font-weight: bold;text-align: center;font-size: 10px;}
+    .estiloCerrarVistaPrevia:hover{background: #FFF;color: #000;cursor: pointer;}

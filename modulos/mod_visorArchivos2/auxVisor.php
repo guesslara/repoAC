@@ -3,7 +3,7 @@
     if(isset($_POST["action"])){
 	switch($_POST["action"]){
 	    case "abrirDirectorio":
-		mostrarContenidoDirectorio($_POST["path"]);
+		mostrarContenidoDirectorio2($_POST["path"]);
 	    break;
 	    case "crearDir":
 		crearDirectorio($_POST["nombreDir"],$_POST["path"]);
@@ -101,6 +101,57 @@
 		echo "<script type='text/javascript'> alert('Error al crear el directorio, verifique la informacion'); </script>";
 	    }
 	}
+    }
+    
+    function mostrarContenidoDirectorio2($path){
+	try{
+	    echo "Path&nbsp;".$path."<br>";
+	    $directorio=dir($path);//se evalua el path que se ha pasado antes del recorrido
+            if(!is_dir($path)){
+                    echo "El directorio no existe en la ruta especificada.";
+            }else{
+		$carpeta = @scandir($path);//se recorre la carpeta
+		if (count($carpeta) > 2){
+		    $i=0; $contenidoDir=array();
+		    while ($archivo = $directorio->read()){		    
+			if($archivo != "." && $archivo != ".."){//se eliminan las opciones del punto y dos puntos
+			    $contenidoDir[$i]=$archivo;
+			}
+			$i+=1;
+		    }					
+		    $directorio->close();//se cierra la lectura del directorio
+		    sort($contenidoDir);//se ordena el contenido del directorio
+?>
+		    <div class="dhe-example-section-content" style="border: 1px solid #ff0000;">
+			<div id="carpetas" style="border: 1px solid blue;">
+<?
+		    //recorrido del directorio mostrado
+		    for($i=0;$i<count($contenidoDir);$i++){
+			if(is_dir($path."/".$contenidoDir[$i])){//si es un directorio
+?>			    
+			    <ul class="sortable-list" style="border: 1px solid #000;">
+				<img src="img/folder-closed.gif" border="0" /><?=$contenidoDir[$i];?>
+			    </ul>			    
+<?			    
+			}else{//es un archivo
+?>
+			    <ul class="sortable-list" style="border: 1px solid #000;">
+				<li class="sortable-item" style="height: 15px;padding: 5px;border: 1px solid #CCC;margin: 5px;"><?=$contenidoDir[$i];?></li>
+			    </ul>
+<?
+			}
+		    }
+		    //fin del recorrido
+?>
+		    
+			</div>
+		    </div>	
+<?
+		}else{
+		    echo "<center><p><h4>El directorio esta vacio</h4></p></center>";
+		}
+	    }	
+	}catch(Exception $e){ echo "Error al leer el directorio."; }
     }
     
     function mostrarContenidoDirectorio($path){			
